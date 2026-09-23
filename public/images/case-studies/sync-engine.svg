@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%" fill="none">
+  <rect width="800" height="450" rx="12" fill="#0c0d0e" stroke="#23252a" stroke-width="1"/>
+  
+  <!-- Subtle grid lines -->
+  <line x1="50" y1="50" x2="750" y2="50" stroke="#161718" stroke-width="1"/>
+  <line x1="50" y1="400" x2="750" y2="400" stroke="#161718" stroke-width="1"/>
+  <line x1="280" y1="50" x2="280" y2="400" stroke="#161718" stroke-width="1"/>
+  <line x1="520" y1="50" x2="520" y2="400" stroke="#161718" stroke-width="1"/>
+
+  <!-- Left Node: Client Node A -->
+  <rect x="70" y="140" width="180" height="170" rx="8" fill="#0f1011" stroke="#23252a" stroke-width="1"/>
+  <text x="90" y="175" fill="#ffffff" font-family="monospace" font-size="14" font-weight="500">Client Node A</text>
+  <text x="90" y="200" fill="#8a8f98" font-family="monospace" font-size="11">LOCAL DISK: SQLite</text>
+  <rect x="90" y="220" width="140" height="28" rx="4" fill="#161718" stroke="#23252a"/>
+  <text x="100" y="238" fill="#d0d6e0" font-family="monospace" font-size="11">Append Ledger</text>
+  <rect x="90" y="260" width="140" height="28" rx="4" fill="#161718" stroke="#23252a"/>
+  <text x="100" y="278" fill="#27a644" font-family="monospace" font-size="11">Wasm CRDT Core</text>
+
+  <!-- Center: Sync Relay & Mesh -->
+  <rect x="310" y="110" width="180" height="230" rx="8" fill="#161718" stroke="#383b3f" stroke-width="1"/>
+  <text x="330" y="145" fill="#ffffff" font-family="monospace" font-size="14" font-weight="500">Delta Mesh</text>
+  <text x="330" y="170" fill="#8a8f98" font-family="monospace" font-size="11">BINARY PROTOCOL</text>
+  <rect x="330" y="195" width="140" height="32" rx="4" fill="#0f1011" stroke="#23252a"/>
+  <text x="345" y="215" fill="#d0d6e0" font-family="monospace" font-size="11">Zstd Compression</text>
+  <rect x="330" y="240" width="140" height="32" rx="4" fill="#0f1011" stroke="#23252a"/>
+  <text x="345" y="260" fill="#6366f1" font-family="monospace" font-size="11">Vector Clocks</text>
+  <rect x="330" y="285" width="140" height="32" rx="4" fill="#0f1011" stroke="#23252a"/>
+  <text x="345" y="305" fill="#e4f222" font-family="monospace" font-size="11">Deterministic LWW</text>
+
+  <!-- Right Node: Client Node B -->
+  <rect x="550" y="140" width="180" height="170" rx="8" fill="#0f1011" stroke="#23252a" stroke-width="1"/>
+  <text x="570" y="175" fill="#ffffff" font-family="monospace" font-size="14" font-weight="500">Client Node B</text>
+  <text x="570" y="200" fill="#8a8f98" font-family="monospace" font-size="11">LOCAL DISK: IndexedDB</text>
+  <rect x="570" y="220" width="140" height="28" rx="4" fill="#161718" stroke="#23252a"/>
+  <text x="580" y="238" fill="#d0d6e0" font-family="monospace" font-size="11">Append Ledger</text>
+  <rect x="570" y="260" width="140" height="28" rx="4" fill="#161718" stroke="#23252a"/>
+  <text x="580" y="278" fill="#27a644" font-family="monospace" font-size="11">Wasm CRDT Core</text>
+
+  <!-- Connectors -->
+  <path d="M250 225 L310 225" stroke="#383b3f" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M490 225 L550 225" stroke="#383b3f" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <text x="70" y="80" fill="#62666d" font-family="monospace" font-size="12">FIGURE 1.0 // DETERMINISTIC CONVERGENCE PIPELINE</text>
+</svg>
+

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%" fill="none">
+  <rect width="800" height="450" rx="12" fill="#0c0d0e" stroke="#23252a" stroke-width="1"/>
+
+  <!-- Top simulated window header -->
+  <rect x="0" y="0" width="800" height="40" rx="12" fill="#161718"/>
+  <circle cx="25" cy="20" r="5" fill="#23252a"/>
+  <circle cx="42" cy="20" r="5" fill="#23252a"/>
+  <circle cx="59" cy="20" r="5" fill="#23252a"/>
+  <text x="85" y="24" fill="#8a8f98" font-family="monospace" font-size="12">workspace.agent-mesh // live-session-084</text>
+
+  <!-- Left Sidebar: Step tree -->
+  <rect x="20" y="55" width="280" height="375" rx="8" fill="#0f1011" stroke="#23252a" stroke-width="1"/>
+  <text x="35" y="85" fill="#ffffff" font-family="monospace" font-size="13" font-weight="500">Execution Steps</text>
+  
+  <rect x="35" y="105" width="250" height="36" rx="4" fill="#161718" stroke="#27a644"/>
+  <text x="45" y="127" fill="#4ade80" font-family="monospace" font-size="11">✓ Step 1: Scan AST definitions</text>
+  
+  <rect x="35" y="150" width="250" height="36" rx="4" fill="#161718" stroke="#6366f1"/>
+  <text x="45" y="172" fill="#a5b4fc" font-family="monospace" font-size="11">● Step 2: Generate Type Guards</text>
+  
+  <rect x="35" y="195" width="250" height="36" rx="4" fill="#161718" stroke="#23252a"/>
+  <text x="45" y="217" fill="#8a8f98" font-family="monospace" font-size="11">◌ Step 3: Run Vitest Suite</text>
+
+  <!-- Right Pane: Diff Inspector -->
+  <rect x="315" y="55" width="465" height="375" rx="8" fill="#0f1011" stroke="#23252a" stroke-width="1"/>
+  <text x="335" y="85" fill="#ffffff" font-family="monospace" font-size="13" font-weight="500">Diff Inspector: src/parser/schema.ts</text>
+
+  <!-- Diff lines -->
+  <rect x="335" y="110" width="425" height="24" rx="2" fill="rgba(235,87,87,0.1)"/>
+  <text x="345" y="126" fill="#f87171" font-family="monospace" font-size="11">- export type UserPayload = Record&lt;string, any&gt;;</text>
+
+  <rect x="335" y="138" width="425" height="24" rx="2" fill="rgba(39,166,68,0.1)"/>
+  <text x="345" y="154" fill="#4ade80" font-family="monospace" font-size="11">+ export interface UserPayload { id: string; role: Role; }</text>
+
+  <rect x="335" y="166" width="425" height="24" rx="2" fill="rgba(39,166,68,0.1)"/>
+  <text x="345" y="182" fill="#4ade80" font-family="monospace" font-size="11">+ export function isUserPayload(v: unknown): v is UserPayload;</text>
+
+  <!-- Actions -->
+  <rect x="335" y="375" width="90" height="32" rx="4" fill="#e4f222"/>
+  <text x="355" y="395" fill="#08090a" font-family="monospace" font-size="11" font-weight="600">Approve</text>
+
+  <rect x="435" y="375" width="90" height="32" rx="4" fill="#161718" stroke="#23252a"/>
+  <text x="460" y="395" fill="#d0d6e0" font-family="monospace" font-size="11">Reject</text>
+</svg>
+

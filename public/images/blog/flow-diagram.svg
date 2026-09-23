@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%" fill="none">
+  <rect width="800" height="400" rx="12" fill="#0c0d0e" stroke="#23252a" stroke-width="1"/>
+  
+  <text x="40" y="50" fill="#8a8f98" font-family="monospace" font-size="12">DECISION TREE COMPRESSION</text>
+
+  <!-- Before: Branching complexity -->
+  <rect x="40" y="80" width="340" height="280" rx="8" fill="#0f1011" stroke="#23252a"/>
+  <text x="60" y="110" fill="#eb5757" font-family="monospace" font-size="13" font-weight="600">Fragmented Flow (3+ Choices)</text>
+  
+  <circle cx="80" cy="160" r="16" fill="#161718" stroke="#eb5757"/>
+  <text x="76" y="165" fill="#eb5757" font-family="monospace" font-size="11">1</text>
+  <path d="M100 160 L140 130" stroke="#383b3f" stroke-width="2"/>
+  <path d="M100 160 L140 190" stroke="#383b3f" stroke-width="2"/>
+
+  <rect x="145" y="115" width="80" height="30" rx="4" fill="#161718" stroke="#383b3f"/>
+  <text x="155" y="134" fill="#8a8f98" font-family="monospace" font-size="10">Manual cfg</text>
+
+  <rect x="145" y="175" width="80" height="30" rx="4" fill="#161718" stroke="#383b3f"/>
+  <text x="155" y="194" fill="#8a8f98" font-family="monospace" font-size="10">Presets</text>
+
+  <path d="M230 130 L270 160" stroke="#383b3f" stroke-width="2"/>
+  <path d="M230 190 L270 160" stroke="#383b3f" stroke-width="2"/>
+
+  <circle cx="290" cy="160" r="16" fill="#161718" stroke="#eb5757"/>
+  <text x="286" y="165" fill="#eb5757" font-family="monospace" font-size="11">2</text>
+
+  <text x="60" y="320" fill="#62666d" font-family="monospace" font-size="11">Avg completion: 4.2 min (High abandonment)</text>
+
+  <!-- After: Linear with smart defaults -->
+  <rect x="420" y="80" width="340" height="280" rx="8" fill="#0f1011" stroke="#23252a"/>
+  <text x="440" y="110" fill="#27a644" font-family="monospace" font-size="13" font-weight="600">Linear Flow (Context-Aware)</text>
+
+  <rect x="440" y="145" width="300" height="36" rx="4" fill="#161718" stroke="#27a644"/>
+  <text x="455" y="168" fill="#d0d6e0" font-family="monospace" font-size="11">Auto-detected preset (Node.js runtime)</text>
+
+  <rect x="440" y="195" width="300" height="36" rx="4" fill="#161718" stroke="#23252a"/>
+  <text x="455" y="218" fill="#8a8f98" font-family="monospace" font-size="11">+ Progressive disclosure (advanced options)</text>
+
+  <rect x="440" y="245" width="120" height="32" rx="4" fill="#e4f222"/>
+  <text x="460" y="265" fill="#08090a" font-family="monospace" font-size="11" font-weight="600">Deploy Now</text>
+
+  <text x="440" y="320" fill="#62666d" font-family="monospace" font-size="11">Avg completion: 35s (98% completion rate)</text>
+</svg>
+
