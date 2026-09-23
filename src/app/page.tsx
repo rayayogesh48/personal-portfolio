@@ -1,6 +1,8 @@
 import React from "react";
 import { AboutSection } from "@/components/sections/about-section";
+import { FrictionInspector } from "@/components/sections/friction-inspector";
 import { CaseStudiesSection } from "@/components/sections/case-studies-section";
+import { DesignSystemWorkbench } from "@/components/sections/design-system-workbench";
 import { ExperienceSection } from "@/components/sections/experience-section";
 import { LatestBlogSection } from "@/components/sections/latest-blog-section";
 import { getAllPosts } from "@/lib/content";
@@ -19,13 +21,19 @@ export default function HomePage() {
       {/* 1. About Me */}
       <AboutSection />
 
-      {/* 2. Problem-Solving Case Studies */}
+      {/* 2. Interactive UX Experiment: Friction Inspector */}
+      <FrictionInspector />
+
+      {/* 3. Problem-Solving Case Studies */}
       <CaseStudiesSection />
 
-      {/* 3. Experience */}
+      {/* 4. Interactive Micro-Workbench: Token & State Lab */}
+      <DesignSystemWorkbench />
+
+      {/* 5. Experience */}
       <ExperienceSection />
 
-      {/* 4. Latest Blog Posts */}
+      {/* 6. Latest Blog Posts */}
       <LatestBlogSection posts={posts} />
     </div>
   );

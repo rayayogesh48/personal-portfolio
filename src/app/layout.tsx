@@ -3,6 +3,9 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/sections/navbar";
 import { Footer } from "@/components/sections/footer";
+import { BlueprintProvider } from "@/context/blueprint-context";
+import { CommandPalette } from "@/components/ui/command-palette";
+import { BlueprintOverlay } from "@/components/ui/blueprint-overlay";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -53,9 +56,13 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-void text-mist selection:bg-acid-lime/20 selection:text-paper font-sans flex flex-col antialiased">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <BlueprintProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <CommandPalette />
+          <BlueprintOverlay />
+        </BlueprintProvider>
       </body>
     </html>
   );

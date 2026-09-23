@@ -4,11 +4,13 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "@/components/ui/logo";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, Search } from "lucide-react";
+import { useBlueprint } from "@/context/blueprint-context";
 
 export function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { openCommandPalette } = useBlueprint();
 
   const navLinks = [
     { label: "About Me", href: "/#about" },
@@ -43,8 +45,20 @@ export function Navbar() {
           })}
         </nav>
 
-        {/* Right Contact Link */}
-        <div className="hidden sm:flex items-center">
+        {/* Right Contact Link & Command Palette Trigger */}
+        <div className="hidden sm:flex items-center gap-3">
+          <button
+            onClick={openCommandPalette}
+            className="group flex items-center gap-2 px-2.5 py-1 text-[12px] font-mono text-fog hover:text-paper bg-steel/30 hover:bg-steel/50 border border-graphite hover:border-acid-lime/40 rounded-[6px] transition-all"
+            title="Open Command Palette (⌘K)"
+          >
+            <Search className="w-3 h-3 text-ash group-hover:text-acid-lime transition-colors" />
+            <span className="text-[11px] text-ash group-hover:text-fog">Search</span>
+            <kbd className="text-[10px] px-1 py-0.5 bg-void border border-graphite rounded text-ash group-hover:border-acid-lime/30 group-hover:text-acid-lime transition-colors">
+              ⌘K
+            </kbd>
+          </button>
+
           <Link
             href="mailto:yogesh@example.com"
             className="group inline-flex items-center gap-1 text-[13px] font-normal text-fog hover:text-acid-lime transition-all py-1 px-2.5 rounded-[6px] hover:bg-acid-lime/[0.04]"
@@ -77,6 +91,21 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
+          <button
+            onClick={() => {
+              setMobileMenuOpen(false);
+              openCommandPalette();
+            }}
+            className="text-left text-mist hover:text-acid-lime text-[14px] py-1 transition-colors flex items-center justify-between"
+          >
+            <span className="flex items-center gap-2">
+              <Search className="w-3.5 h-3.5 text-ash" />
+              Command Palette
+            </span>
+            <kbd className="text-[10px] font-mono px-1.5 py-0.5 bg-void border border-graphite rounded text-ash">
+              ⌘K
+            </kbd>
+          </button>
           <div className="pt-2 border-t border-graphite">
             <Link
               href="mailto:yogesh@example.com"
