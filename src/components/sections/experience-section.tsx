@@ -22,10 +22,10 @@ export function ExperienceSection() {
       {/* Chronological list, latest first */}
       <div className="divide-y divide-graphite/60">
         {experiences.map((exp, index) => (
-          <div key={index} className="py-5 first:pt-0 last:pb-0">
+          <div key={index} className="py-5 first:pt-0 last:pb-0 group">
             <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1.5">
               <div className="flex items-baseline gap-2">
-                <h3 className="text-[16px] sm:text-[17px] font-[510] text-paper">
+                <h3 className="text-[16px] sm:text-[17px] font-[510] text-paper group-hover:text-acid-lime transition-colors">
                   {exp.role}
                 </h3>
                 <span className="text-ash font-normal text-[13px]">at</span>
@@ -50,10 +50,10 @@ export function ExperienceSection() {
               <div className="mt-2.5">
                 <Link
                   href={`/work/${exp.caseStudySlug}`}
-                  className="inline-flex items-center gap-1 text-[12px] font-mono text-mist hover:text-paper transition-colors group"
+                  className="inline-flex items-center gap-1 text-[12px] font-mono text-mist hover:text-acid-lime transition-colors group/link"
                 >
                   <span>↳ View related case study</span>
-                  <ArrowUpRight className="w-3 h-3 text-ash group-hover:text-paper group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <ArrowUpRight className="w-3 h-3 text-ash group-hover/link:text-acid-lime group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-all" />
                 </Link>
               </div>
             )}

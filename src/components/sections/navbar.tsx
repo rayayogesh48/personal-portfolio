@@ -31,10 +31,10 @@ export function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className={`px-2.5 py-1 text-[13px] font-normal transition-colors rounded-[6px] ${
+                className={`px-2.5 py-1 text-[13px] font-normal transition-all rounded-[6px] ${
                   isBlogActive
-                    ? "text-paper bg-white/[0.05]"
-                    : "text-fog hover:text-paper hover:bg-white/[0.02]"
+                    ? "text-acid-lime bg-acid-lime/[0.08] border border-acid-lime/20"
+                    : "text-fog hover:text-acid-lime hover:bg-acid-lime/[0.04]"
                 }`}
               >
                 {link.label}
@@ -47,17 +47,17 @@ export function Navbar() {
         <div className="hidden sm:flex items-center">
           <Link
             href="mailto:yogesh@example.com"
-            className="inline-flex items-center gap-1 text-[13px] font-normal text-fog hover:text-paper transition-colors py-1 px-2.5 rounded-[6px] hover:bg-white/[0.02]"
+            className="group inline-flex items-center gap-1 text-[13px] font-normal text-fog hover:text-acid-lime transition-all py-1 px-2.5 rounded-[6px] hover:bg-acid-lime/[0.04]"
           >
             <span>yogesh@example.com</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-ash" />
+            <ArrowUpRight className="w-3.5 h-3.5 text-ash group-hover:text-acid-lime group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
           </Link>
         </div>
 
         {/* Mobile menu trigger */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-1.5 text-mist hover:text-paper rounded-[6px] hover:bg-white/[0.04]"
+          className="md:hidden p-1.5 text-mist hover:text-acid-lime rounded-[6px] hover:bg-white/[0.04] transition-colors"
           aria-label="Toggle navigation menu"
         >
           {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
@@ -72,7 +72,7 @@ export function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-mist hover:text-paper text-[14px] py-1 transition-colors"
+              className="text-mist hover:text-acid-lime text-[14px] py-1 transition-colors"
             >
               {link.label}
             </Link>
@@ -81,10 +81,10 @@ export function Navbar() {
             <Link
               href="mailto:yogesh@example.com"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-[13px] text-paper inline-flex items-center gap-1"
+              className="text-[13px] text-paper hover:text-acid-lime inline-flex items-center gap-1 transition-colors group"
             >
               <span>Email: yogesh@example.com</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-ash" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-ash group-hover:text-acid-lime transition-colors" />
             </Link>
           </div>
         </div>

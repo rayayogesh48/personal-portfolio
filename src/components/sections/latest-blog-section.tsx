@@ -29,10 +29,10 @@ export function LatestBlogSection({ posts }: LatestBlogSectionProps) {
         {posts.length > 0 && (
           <Link
             href="/blog"
-            className="inline-flex items-center gap-1 text-[12px] font-[510] text-mist hover:text-paper transition-colors group shrink-0"
+            className="inline-flex items-center gap-1 text-[12px] font-[510] text-mist hover:text-acid-lime transition-colors group shrink-0"
           >
             <span>View All Posts</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-ash group-hover:text-paper group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight className="w-3.5 h-3.5 text-ash group-hover:text-acid-lime group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
           </Link>
         )}
       </div>
@@ -52,7 +52,7 @@ export function LatestBlogSection({ posts }: LatestBlogSectionProps) {
               </div>
 
               <Link href={`/blog/${post.slug}`} className="block">
-                <h3 className="text-[17px] sm:text-[18px] font-[510] tracking-[-0.01em] text-paper group-hover:text-mist transition-colors mb-1.5 leading-[1.3]">
+                <h3 className="text-[17px] sm:text-[18px] font-[510] tracking-[-0.01em] text-paper group-hover:text-acid-lime transition-colors mb-1.5 leading-[1.3]">
                   {post.title}
                 </h3>
               </Link>

@@ -12,16 +12,16 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "ghost", size = "md", href, external, children, ...props }, ref) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-mist disabled:pointer-events-none disabled:opacity-50 select-none cursor-pointer";
+      "inline-flex items-center justify-center font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-acid-lime disabled:pointer-events-none disabled:opacity-50 select-none cursor-pointer";
 
     const variantStyles = {
-      acid: "bg-acid-lime text-void font-[510] tracking-[-0.011em] rounded-[6px] acid-lime-shadow hover:brightness-105 active:scale-[0.99]",
+      acid: "bg-acid-lime text-void font-[510] tracking-[-0.011em] rounded-[6px] acid-lime-shadow hover:brightness-110 active:scale-[0.99]",
       ghost:
-        "bg-transparent border border-graphite text-mist rounded-[6px] hover:border-smoke hover:text-paper hover:bg-white/[0.02] active:scale-[0.99]",
-      pill: "bg-paper text-void font-[510] rounded-[9999px] hover:bg-bone active:scale-[0.99]",
+        "bg-transparent border border-graphite text-mist rounded-[6px] hover:border-acid-lime/50 hover:text-acid-lime hover:bg-acid-lime/[0.04] active:scale-[0.99]",
+      pill: "bg-paper text-void font-[510] rounded-[9999px] hover:bg-acid-lime hover:text-void active:scale-[0.99]",
       "pill-subtle":
-        "bg-white/[0.05] border border-transparent hover:border-graphite text-mist hover:text-paper rounded-[9999px] text-[13px] active:scale-[0.99]",
-      nav: "bg-transparent text-mist hover:text-paper text-[13px] font-normal underline-offset-4 hover:underline px-3 py-2",
+        "bg-white/[0.05] border border-transparent hover:border-acid-lime/40 text-mist hover:text-acid-lime rounded-[9999px] text-[13px] active:scale-[0.99]",
+      nav: "bg-transparent text-mist hover:text-acid-lime text-[13px] font-normal underline-offset-4 hover:underline px-3 py-2",
     };
 
     const sizeStyles = {

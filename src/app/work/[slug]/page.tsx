@@ -51,9 +51,9 @@ export default async function CaseStudyPage({
       {/* Back to Case Studies link */}
       <Link
         href="/#case-studies"
-        className="inline-flex items-center gap-1.5 text-[12px] font-mono text-fog hover:text-paper transition-colors mb-6 group"
+        className="inline-flex items-center gap-1.5 text-[12px] font-mono text-fog hover:text-acid-lime transition-colors mb-6 group"
       >
-        <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" />
+        <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 group-hover:text-acid-lime transition-all" />
         <span>Back to Case Studies</span>
       </Link>
 
@@ -99,14 +99,14 @@ export default async function CaseStudyPage({
       <div className="mt-12 pt-6 border-t border-graphite flex items-center justify-between text-[13px]">
         <Link
           href="/#case-studies"
-          className="inline-flex items-center gap-1.5 text-mist hover:text-paper transition-colors"
+          className="inline-flex items-center gap-1.5 text-mist hover:text-acid-lime transition-colors group"
         >
-          <ArrowLeft className="w-3.5 h-3.5" />
+          <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" />
           <span>Back to Case Studies</span>
         </Link>
         <Link
           href="/"
-          className="text-fog hover:text-mist transition-colors"
+          className="text-fog hover:text-acid-lime transition-colors"
         >
           Home
         </Link>

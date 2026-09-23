@@ -20,20 +20,20 @@ export function Footer() {
         <div className="flex flex-wrap items-center gap-5">
           <Link
             href={`mailto:${aboutData.email}`}
-            className="text-mist hover:text-paper transition-colors inline-flex items-center gap-1"
+            className="text-mist hover:text-acid-lime transition-colors inline-flex items-center gap-1 group"
           >
             <span>{aboutData.email}</span>
-            <ArrowUpRight className="w-3 h-3 text-ash" />
+            <ArrowUpRight className="w-3 h-3 text-ash group-hover:text-acid-lime group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
           </Link>
           {aboutData.socials.linkedin && (
             <a
               href={aboutData.socials.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-fog hover:text-paper transition-colors inline-flex items-center gap-1"
+              className="text-fog hover:text-acid-lime transition-colors inline-flex items-center gap-1 group"
             >
               <span>LinkedIn</span>
-              <ArrowUpRight className="w-3 h-3 text-ash" />
+              <ArrowUpRight className="w-3 h-3 text-ash group-hover:text-acid-lime group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
             </a>
           )}
           {aboutData.socials.github && (
@@ -41,10 +41,10 @@ export function Footer() {
               href={aboutData.socials.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-fog hover:text-paper transition-colors inline-flex items-center gap-1"
+              className="text-fog hover:text-acid-lime transition-colors inline-flex items-center gap-1 group"
             >
               <span>GitHub</span>
-              <ArrowUpRight className="w-3 h-3 text-ash" />
+              <ArrowUpRight className="w-3 h-3 text-ash group-hover:text-acid-lime group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
             </a>
           )}
           {aboutData.socials.twitter && (
@@ -52,10 +52,10 @@ export function Footer() {
               href={aboutData.socials.twitter}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-fog hover:text-paper transition-colors inline-flex items-center gap-1"
+              className="text-fog hover:text-acid-lime transition-colors inline-flex items-center gap-1 group"
             >
               <span>X</span>
-              <ArrowUpRight className="w-3 h-3 text-ash" />
+              <ArrowUpRight className="w-3 h-3 text-ash group-hover:text-acid-lime group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
             </a>
           )}
         </div>

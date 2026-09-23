@@ -31,7 +31,7 @@ export function CaseStudiesSection() {
           className="inline-flex items-center gap-1.5 text-[13px] font-[510] text-mist hover:text-acid-lime transition-colors group shrink-0"
         >
           <span>View all work</span>
-          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:text-acid-lime transition-all" />
         </Link>
       </div>
 
@@ -41,11 +41,11 @@ export function CaseStudiesSection() {
           <Link
             key={study.slug}
             href={`/work/${study.slug}`}
-            className="group block h-full focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-mist rounded-[10px]"
+            className="group block h-full focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-acid-lime rounded-[10px]"
           >
             <Card
               variant="showcase"
-              className="h-full flex flex-col justify-between border border-graphite hover:border-smoke hover:bg-white/[0.015] transition-all duration-200 p-0 overflow-hidden rounded-[10px]"
+              className="h-full flex flex-col justify-between border border-graphite hover:border-acid-lime/40 hover:bg-white/[0.015] hover:shadow-[0_0_24px_rgba(228,242,34,0.06)] transition-all duration-200 p-0 overflow-hidden rounded-[10px]"
             >
               {/* 1. Image */}
               {study.coverImage && (
@@ -66,7 +66,7 @@ export function CaseStudiesSection() {
                     {study.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[11px] font-mono px-2 py-0.5 rounded-[4px] bg-white/[0.04] text-ash border border-white/[0.05] group-hover:border-white/[0.08] transition-colors"
+                        className="text-[11px] font-mono px-2 py-0.5 rounded-[4px] bg-white/[0.04] text-ash border border-white/[0.05] group-hover:border-acid-lime/30 group-hover:text-mist transition-colors"
                       >
                         {tag}
                       </span>
@@ -85,7 +85,7 @@ export function CaseStudiesSection() {
                 </div>
 
                 {/* 5. CTA: Read Case Study */}
-                <div className="pt-3.5 border-t border-graphite/60 flex items-center justify-between text-[13px] font-[510] text-mist group-hover:text-paper transition-colors">
+                <div className="pt-3.5 border-t border-graphite/60 flex items-center justify-between text-[13px] font-[510] text-mist group-hover:text-acid-lime transition-colors">
                   <span className="flex items-center gap-1.5">
                     <span>Read case study</span>
                     <ArrowRight className="w-3.5 h-3.5 text-ash group-hover:text-acid-lime group-hover:translate-x-1 transition-all" />
@@ -109,7 +109,7 @@ export function CaseStudiesSection() {
           className="w-full sm:w-auto flex items-center justify-center gap-2 group text-[13.5px]"
         >
           <span>View all case studies ({caseStudies.length})</span>
-          <ArrowRight className="w-3.5 h-3.5 text-ash group-hover:translate-x-0.5 transition-transform" />
+          <ArrowRight className="w-3.5 h-3.5 text-ash group-hover:text-acid-lime group-hover:translate-x-0.5 transition-all" />
         </Button>
       </div>
     </section>

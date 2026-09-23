@@ -17,9 +17,9 @@ export default function BlogIndexPage() {
       {/* Back to home */}
       <Link
         href="/"
-        className="inline-flex items-center gap-1.5 text-[12px] font-mono text-fog hover:text-paper transition-colors mb-6 group"
+        className="inline-flex items-center gap-1.5 text-[12px] font-mono text-fog hover:text-acid-lime transition-colors mb-6 group"
       >
-        <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" />
+        <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 group-hover:text-acid-lime transition-all" />
         <span>Back to Home</span>
       </Link>
 
@@ -47,7 +47,7 @@ export default function BlogIndexPage() {
               </div>
 
               <Link href={`/blog/${post.slug}`} className="block">
-                <h2 className="text-[17px] sm:text-[19px] font-[510] tracking-[-0.01em] text-paper group-hover:text-mist transition-colors mb-1.5 leading-[1.3]">
+                <h2 className="text-[17px] sm:text-[19px] font-[510] tracking-[-0.01em] text-paper group-hover:text-acid-lime transition-colors mb-1.5 leading-[1.3]">
                   {post.title}
                 </h2>
               </Link>
