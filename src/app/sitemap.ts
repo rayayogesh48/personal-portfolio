@@ -1,40 +1,26 @@
-import { MetadataRoute } from "next";
-import { getAllPosts } from "@/lib/content";
-import { caseStudies } from "@/data/case-studies";
+import type { MetadataRoute } from "next";
+import { listPublishedBlogPosts, listPublishedCraft, listPublishedWork } from "@/content/server";
+import { isPublicSite, siteUrl } from "@/config/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://example.com";
-  const posts = getAllPosts();
-
-  const blogRoutes = posts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
-
-  const caseStudyRoutes = caseStudies.map((study) => ({
-    url: `${baseUrl}/work/${study.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
-  }));
-
+  if (!isPublicSite) return [];
   return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
+    ...["", "/work", "/about", "/craft", "/blog"].map((route) => ({
+      url: `${siteUrl}${route}`,
+      priority: route ? 0.8 : 1,
+    })),
+    ...listPublishedWork().map((study) => ({
+      url: `${siteUrl}/work/${study.slug}`,
       priority: 0.8,
-    },
-    ...caseStudyRoutes,
-    ...blogRoutes,
+    })),
+    ...listPublishedCraft().map((item) => ({
+      url: `${siteUrl}/craft/${item.slug}`,
+      ...(item.date ? { lastModified: new Date(item.date) } : {}),
+    })),
+    ...listPublishedBlogPosts().map((post) => ({
+      url: `${siteUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      priority: 0.7,
+    })),
   ];
 }
-

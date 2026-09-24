@@ -2,15 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-    ],
-  },
+  // Keep a running development server from overwriting production build files.
+  distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",
 };
 
 export default nextConfig;
-

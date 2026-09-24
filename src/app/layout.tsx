@@ -1,61 +1,62 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/sections/navbar";
-import { Footer } from "@/components/sections/footer";
+import "@/styles/tokens.css";
+import "@/styles/base.css";
+import "@/styles/components.css";
+import "@/styles/home.css";
+import "@/styles/site.css";
+import { Navbar } from "@/components/site/navbar";
+import { Footer } from "@/components/site/site-footer";
+import { PortfolioMotion } from "@/components/motion/portfolio-motion.client";
+import { ThemeProvider } from "@/components/theme/theme-provider.client";
+import { themeInitScript } from "@/components/theme/theme-init";
+import { isPublicSite, siteDescription, siteName, siteUrl } from "@/config/site";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-  fallback: ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-  fallback: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "monospace"],
+  fallback: ["system-ui", "sans-serif"],
 });
 
 export const metadata: Metadata = {
+  ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
   title: {
-    default: "Yogesh Raya | Product Designer in Nepal",
-    template: "%s | Yogesh Raya",
+    default: `${siteName} | Product Designer in Nepal`,
+    template: `%s | ${siteName}`,
   },
-  description:
-    "Explore Yogesh Raya’s product design portfolio: UX case studies, client projects, website designs, and practical thoughts on solving user problems.",
-  icons: {
-    icon: "/icon.svg",
-  },
-  openGraph: {
-    title: "Yogesh Raya | Product Designer in Nepal",
-    description:
-      "Explore Yogesh Raya’s product design portfolio: UX case studies, client projects, website designs, and practical thoughts on solving user problems.",
-    type: "website",
-    locale: "en_US",
-  },
+  description: siteDescription,
+  robots: { index: isPublicSite, follow: isPublicSite },
+  icons: { icon: "/icon.svg" },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} dark scroll-smooth`}>
+    <html
+      lang="en"
+      className={inter.variable}
+      data-theme="dark"
+      suppressHydrationWarning
+    >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body className="min-h-screen bg-void text-mist selection:bg-acid-lime/20 selection:text-paper font-sans flex flex-col antialiased">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <body>
+        <ThemeProvider>
+          <PortfolioMotion>
+            <a href="#main-content" className="skip-link">
+              Skip to content
+            </a>
+            <Navbar />
+            <main id="main-content" tabIndex={-1}>
+              {children}
+            </main>
+            <Footer />
+          </PortfolioMotion>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,15 +1,20 @@
 {
-  "name": "linear-portfolio",
+  "name": "personal-portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "content:check": "tsx scripts/validate-content.ts",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
+    "test:figma": "playwright test tests/figma-home.spec.ts",
+    "check": "npm run lint && npm run content:check && npm run test:unit && npm run build && npm run typecheck"
   },
   "dependencies": {
-    "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.475.0",
     "motion": "^12.4.7",
@@ -18,15 +23,23 @@
     "react-dom": "^19.0.0",
     "react-markdown": "^10.1.0",
     "remark-gfm": "^4.0.1",
-    "tailwind-merge": "^3.0.1"
+    "server-only": "^0.0.1",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@eslint/eslintrc": "^3.3.7",
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "^4.0.7",
     "@types/node": "^22.13.4",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^15.5.26",
     "postcss": "^8.5.2",
     "tailwindcss": "^4.0.7",
-    "typescript": "^5.7.3"
+    "tsx": "^4.23.15",
+    "typescript": "^5.7.3",
+    "vitest": "^5.0.1"
   }
 }

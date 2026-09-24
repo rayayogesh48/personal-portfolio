@@ -1,0 +1,104 @@
+
+.prose {
+  font-size: 16px;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+.prose p {
+  margin-bottom: 20px;
+}
+.prose h2 {
+  font-size: 24px;
+  margin: 38px 0 15px;
+  letter-spacing: -0.025em;
+}
+.prose h3 {
+  font-size: 19px;
+  margin: 25px 0 12px;
+}
+.prose h4 {
+  color: var(--heading);
+  margin: 20px 0 10px;
+}
+.prose a {
+  color: var(--heading);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 4px;
+}
+.prose ul, .prose ol {
+  padding-left: 23px;
+  margin: 16px 0 23px;
+}
+.prose ul {
+  list-style: disc;
+}
+.prose ol {
+  list-style: decimal;
+}
+.prose li {
+  padding-left: 4px;
+  margin-top: 7px;
+}
+.prose blockquote {
+  border-left: 2px solid var(--line-strong);
+  padding-left: 20px;
+  margin: 25px 0;
+  font-style: italic;
+}
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 35px 0;
+}
+.prose code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.85em;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+.prose pre {
+  background: var(--surface);
+  padding: 20px;
+  border-radius: 12px;
+  overflow-x: auto;
+  margin-bottom: 24px;
+}
+.prose pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+}
+.prose img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  margin: 25px 0;
+}
+.tableScroll {
+  overflow-x: auto;
+  margin: 22px 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.prose table {
+  width: 100%;
+  font-size: 13px;
+  text-align: left;
+  border-collapse: collapse;
+}
+.prose th, .prose td {
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.prose thead {
+  color: var(--heading);
+  background: var(--surface);
+}
+@media (max-width: 600px) {
+  .prose {
+    font-size: 15px;
+  }
+}

@@ -2,7 +2,7 @@
 title: "How to give product design feedback that actually helps"
 description: "Why stating the problem and what is failing produces better design solutions than prescribing button changes."
 date: "2026-09-23"
-draft: true
+status: "draft"
 ---
 
 The most common frustration in product design reviews happens when feedback arrives as a prescriptive design directive instead of an observation about user friction.

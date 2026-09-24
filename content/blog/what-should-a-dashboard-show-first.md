@@ -2,7 +2,7 @@
 title: "What should a product dashboard show first?"
 description: "Why action-oriented triage beats vanity charts when designing interfaces for busy operators."
 date: "2026-08-15"
-draft: false
+status: "published"
 ---
 
 When teams design dashboards, the initial instinct is usually to fill the top of the viewport with large graphical charts: line graphs displaying revenue trajectories, pie charts showing distribution breakdowns, and colorful trend bars.

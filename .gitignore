@@ -9,6 +9,7 @@ coverage/
 
 # Next.js
 .next/
+.next-dev/
 out/
 
 # Production
@@ -28,3 +29,7 @@ build/
 *.tsbuildinfo
 next-env.d.ts
 
+
+# Browser verification
+/test-results/
+/playwright-report/

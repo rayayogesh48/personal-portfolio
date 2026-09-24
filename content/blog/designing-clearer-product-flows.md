@@ -2,7 +2,7 @@
 title: "Designing clearer product flows"
 description: "A practical approach to finding friction and making the next step obvious for users."
 date: "2026-09-23"
-draft: false
+status: "published"
 cover: "/images/blog/flow-diagram.svg"
 coverAlt: "Step-by-step diagram showing simplification of branching user decisions into a linear flow"
 ---

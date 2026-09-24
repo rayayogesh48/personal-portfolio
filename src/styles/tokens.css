@@ -1,0 +1,78 @@
+:root {
+  color-scheme: light;
+  --page: #fcfcfb;
+  --surface: #f4f4f1;
+  --surface-hover: #ebebe7;
+  --heading: #252723;
+  --text: #565951;
+  --muted: #63685d;
+  --line: #e8e9e2;
+  --line-strong: #c9cdc2;
+  --accent: #526548;
+  --on-primary: #fff;
+  --dock: #fcfcfbeb;
+  --cover: #f0f1e9;
+  --dot: #cdd1c0;
+  --project-a: #edf0e7;
+  --project-b: #efebe5;
+  --shadow: 0 4px 20px #25272309, 0 12px 40px #25272306;
+  --ease: cubic-bezier(0.23, 1, 0.32, 1);
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #111111;
+  --surface: #1e1e1e;
+  --surface-hover: #282828;
+  --heading: #ffffff;
+  --text: #b3b3b3;
+  --muted: #999999;
+  --line: #292929;
+  --line-strong: #3e3e3e;
+  --accent: #d4d4d4;
+  --on-primary: #111111;
+  --dock: #111111;
+  --cover: #111111;
+  --dot: #444444;
+  --project-a: #242424;
+  --project-b: #262626;
+  --shadow: 0 4px 20px #0002, 0 12px 40px #0002;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    color-scheme: dark;
+    --page: #111111;
+    --surface: #1e1e1e;
+    --surface-hover: #282828;
+    --heading: #ffffff;
+    --text: #b3b3b3;
+    --muted: #999999;
+    --line: #292929;
+    --line-strong: #3e3e3e;
+    --accent: #d4d4d4;
+    --on-primary: #111111;
+    --dock: #111111;
+    --cover: #111111;
+    --dot: #444444;
+    --project-a: #242424;
+    --project-b: #262626;
+    --shadow: 0 4px 20px #0002, 0 12px 40px #0002;
+  }
+}
+
+:root {
+  --figma-muted: #636363;
+  --figma-divider: #e5e5e5;
+  --figma-gradient: 252, 252, 251;
+}
+:root[data-theme="dark"] {
+  --figma-muted: #606060;
+  --figma-divider: rgb(255 255 255 / 10%);
+  --figma-gradient: 17, 17, 17;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="system"] {
+    --figma-muted: #606060;
+    --figma-divider: rgb(255 255 255 / 10%);
+    --figma-gradient: 17, 17, 17;
+  }
+}
